@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>Sam Auto Spares | Quality Spare Parts Nairobi</title>
+  <!-- Font Awesome 6 for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+    }
+
+    body {
+      background: #f5f7fa;
+      color: #1e293b;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header & Navigation */
+    .top-bar {
+      background: #0f172a;
+      color: #e2e8f0;
+      padding: 8px 0;
+      font-size: 0.9rem;
+    }
+
+    .top-bar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .top-bar i {
+      color: #f97316;
+      margin-right: 5px;
+    }
+
+    .top-contact span {
+      margin-right: 20px;
+    }
+
+    .top-links a {
+      color: #e2e8f0;
+      margin-left: 15px;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .top-links a:hover {
+      color: #f97316;
+    }
+
+    .main-header {
+      background: #ffffff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 0;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .logo i {
+      color: #f97316;
+      font-size: 2.2rem;
+    }
+
+    .logo span {
+      color: #f97316;
+    }
+
+    .search-section {
+      flex: 1;
+      max-width: 450px;
+      min-width: 260px;
+      display: flex;
+      height: 46px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      border-radius: 30px;
+      overflow: hidden;
+    }
+
+    .search-section input {
+      flex: 1;
+      border: 2px solid #e2e8f0;
+      border-right: none;
+      padding: 0 20px;
+      font-size: 0.95rem;
+      outline: none;
+      border-radius: 30px 0 0 30px;
+    }
+
+    .search-section button {
+      background: #f97316;
+      border: none;
+      color: white;
+      padding: 0 22px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      border-radius: 0 30px 30px 0;
+      transition: background 0.3s;
+    }
+
+    .search-section button:hover {
+      background: #ea580c;
+    }
+
+    .nav-icons {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      font-size: 1.4rem;
+      color: #334155;
+    }
+
+    .nav-icons a {
+      color: #1e293b;
+      text-decoration: none;
+      position: relative;
+      transition: color 0.2s;
+    }
+
+    .nav-icons a:hover {
+      color: #f97316;
+    }
+
+    .cart-count {
+      position: absolute;
+      top: -8px;
+      right: -12px;
+      background: #dc2626;
+      color: white;
+      font-size: 0.7rem;
+      font-weight: bold;
+      padding: 2px 6px;
+      border-radius: 20px;
+    }
+
+    .nav-links {
+      background: #1e293b;
+      padding: 0;
+    }
+
+    .nav-links .container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: #f1f5f9;
+      text-decoration: none;
+      padding: 14px 18px;
+      display: inline-block;
+      font-weight: 500;
+      transition: 0.2s;
+      border-bottom: 3px solid transparent;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: #f97316;
+      border-bottom: 3px solid #f97316;
+      background: rgba(255,255,255,0.05);
+    }
+
+    /* Hero section */
+    .hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: white;
+      padding: 50px 0;
+      margin-bottom: 30px;
+    }
+
+    .hero-content {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .hero-text {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .hero-text h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 15px;
+    }
+
+    .hero-text h1 span {
+      color: #f97316;
+    }
+
+    .hero-text p {
+      font-size: 1.2rem;
+      margin-bottom: 25px;
+      opacity: 0.9;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 12px 28px;
+      border-radius: 30px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: 0.3s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: #f97316;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #ea580c;
+    }
+
+    .btn-outline {
+      border: 2px solid white;
+      color: white;
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      background: white;
+      color: #0f172a;
+    }
+
+    .hero-image {
+      flex: 1;
+      text-align: center;
+    }
+
+    .hero-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 16px;
+      box-shadow: 0 20px 30px rgba(0,0,0,0.5);
+    }
+
+    /* Section titles */
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin: 40px 0 25px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #0f172a;
+    }
+
+    .section-title i {
+      color: #f97316;
+    }
+
+    /* Product grid */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 25px;
+      margin-bottom: 30px;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+      transition: transform 0.25s, box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 28px rgba(0,0,0,0.1);
+    }
+
+    .product-img {
+      height: 200px;
+      background: #f1f5f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .product-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .product-info {
+      padding: 18px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-info h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .price {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #f97316;
+      margin: 8px 0;
+    }
+
+    .product-actions {
+      display: flex;
+      gap: 8px;
+      margin-top: auto;
+      flex-wrap: wrap;
+    }
+
+    .btn-sm {
+      padding: 8px 14px;
+      font-size: 0.85rem;
+      border-radius: 20px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      text-decoration: none;
+      flex: 1;
+      justify-content: center;
+    }
+
+    .btn-cart {
+      background: #1e293b;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-cart:hover {
+      background: #0f172a;
+    }
+
+    .btn-whatsapp {
+      background: #25D366;
+      color: white;
+      border: none;
+    }
+
+    .btn-whatsapp:hover {
+      background: #1da851;
+    }
+
+    /* About & Services */
+    .about-row {
+      display: flex;
+      gap: 30px;
+      background: white;
+      border-radius: 20px;
+      padding: 30px;
+      margin: 30px 0;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .about-text {
+      flex: 1;
+      min-width: 260px;
+    }
+
+    .about-text h2 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    .about-image img {
+      border-radius: 16px;
+      max-width: 100%;
+    }
+
+    /* Footer */
+    .footer {
+      background: #0f172a;
+      color: #cbd5e1;
+      padding: 50px 0 20px;
+      margin-top: 50px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+
+    .footer h4 {
+      color: white;
+      margin-bottom: 15px;
+      font-size: 1.2rem;
+    }
+
+    .footer a {
+      color: #94a3b8;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .footer a:hover {
+      color: #f97316;
+    }
+
+    .copyright {
+      text-align: center;
+      border-top: 1px solid #334155;
+      padding-top: 20px;
+      font-size: 0.9rem;
+    }
+
+    /* Modal simple styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.7);
+      align-items: center;
+      justify-content: center;
+      z-index: 200;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    .modal-content input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 30px;
+      border: 1px solid #cbd5e1;
+    }
+
+    @media (max-width: 768px) {
+      .header-content {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .nav-icons {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Top bar -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-contact">
+        <span><i class="fas fa-map-marker-alt"></i> Kirinyaga Road, Nairobi</span>
+        <span><i class="fas fa-phone"></i> 0792632272</span>
+      </div>
+      <div class="top-links">
+        <a href="#"><i class="fas fa-user"></i> Login</a>
+        <a href="#"><i class="fas fa-user-plus"></i> Register</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Header -->
+  <div class="main-header">
+    <div class="container header-content">
+      <div class="logo">
+        <i class="fas fa-cogs"></i> Sam<span>Auto</span>Spares
+      </div>
+      <div class="search-section">
+        <input type="text" placeholder="Search brake pads, filters, engines..." id="searchInput">
+        <button id="searchBtn"><i class="fas fa-search"></i></button>
+      </div>
+      <div class="nav-icons">
+        <a href="#" id="cartIcon"><i class="fas fa-shopping-cart"></i><span class="cart-count" id="cartCount">0</span></a>
+        <a href="#" id="bookServiceLink"><i class="fas fa-calendar-check"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation links -->
+  <div class="nav-links">
+    <div class="container">
+      <a href="#" class="active"><i class="fas fa-home"></i> Home</a>
+      <a href="#products"><i class="fas fa-box"></i> Products</a>
+      <a href="#about"><i class="fas fa-info-circle"></i> About Us</a>
+      <a href="#" id="bookNav"><i class="fas fa-tools"></i> Book Service</a>
+      <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1>Genuine <span>Auto Spares</span> & Services</h1>
+        <p>Trusted supplier on Kirinyaga Road. Quality parts for all vehicle models. Order via WhatsApp or add to cart.</p>
+        <div class="btn-group">
+          <a href="#products" class="btn btn-primary"><i class="fas fa-list"></i> Shop Now</a>
+          <a href="https://wa.me/254792632272?text=Hello%20Sam%20Auto%20Spares%2C%20I%20need%20spare%20parts" target="_blank" class="btn btn-outline"><i class="fab fa-whatsapp"></i> WhatsApp Order</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <!-- Realistic auto spares image (unsplash real image) -->
+        <img src="https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?w=600&auto=format&fit=crop" alt="Auto spare parts display">
+      </div>
+    </div>
+  </div>
+
+  <!-- Products section -->
+  <div class="container" id="products">
+    <h2 class="section-title"><i class="fas fa-oil-can"></i> Featured Spare Parts</h2>
+    <div class="product-grid" id="productGrid"></div>
+  </div>
+
+  <!-- About Us & Service Booking -->
+  <div class="container" id="about">
+    <div class="about-row">
+      <div class="about-text">
+        <h2><i class="fas fa-wrench"></i> About Sam Auto Spares</h2>
+        <p>Located on <strong>Kirinyaga Road, Nairobi</strong>, we specialize in supplying genuine and aftermarket spare parts for all major vehicle brands. With over 10 years of experience, our team ensures quality, reliability, and fast delivery.</p>
+        <p><i class="fas fa-check-circle" style="color:#f97316;"></i> Engine parts, brakes, suspension, filters & more.</p>
+        <p><i class="fas fa-check-circle" style="color:#f97316;"></i> Expert mechanical services & fitting available.</p>
+        <button class="btn btn-primary" id="bookServiceBtn" style="margin-top:15px;"><i class="fas fa-calendar-alt"></i> Book a Service</button>
+      </div>
+      <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=500&auto=format&fit=crop" alt="Auto shop interior" style="width:100%; max-width:400px;">
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer" id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>Sam Auto Spares</h4>
+          <p><i class="fas fa-map-pin"></i> Kirinyaga Road, Nairobi</p>
+          <p><i class="fas fa-phone"></i> 0792632272</p>
+          <p><i class="fas fa-envelope"></i> info@samautospares.co.ke</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <a href="#">Home</a>
+          <a href="#products">Products</a>
+          <a href="#about">About</a>
+          <a href="#">Login / Register</a>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <a href="#">Spare Parts Sales</a>
+          <a href="#">Mechanical Repair</a>
+          <a href="#">Diagnostics</a>
+          <a href="#">Delivery</a>
+        </div>
+      </div>
+      <div class="copyright">
+        &copy; 2025 Sam Auto Spares. All rights reserved. Kirinyaga Road, Nairobi.
+      </div>
+    </div>
+  </div>
+
+  <!-- Login/Register Modal (simple) -->
+  <div class="modal" id="authModal">
+    <div class="modal-content">
+      <h3 id="modalTitle">Login</h3>
+      <input type="email" placeholder="Email" id="authEmail">
+      <input type="password" placeholder="Password" id="authPassword">
+      <div style="display:flex; gap:10px; margin-top:15px;">
+        <button class="btn btn-primary" id="authSubmit">Login</button>
+        <button class="btn btn-outline" style="color:#0f172a; border-color:#0f172a;" id="switchAuth">Register</button>
+      </div>
+      <button style="margin-top:10px; background:none; border:none; color:#f97316; cursor:pointer;" id="closeModal">Close</button>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      // Product data with real Unsplash images for auto parts
+      const products = [
+        { id: 1, name: "Brake Pads (Front Set)", price: 2800, image: "https://images.unsplash.com/photo-1600712242805-5f78671b24da?w=400&auto=format&fit=crop", desc: "High performance ceramic" },
+        { id: 2, name: "Oil Filter", price: 850, image: "https://images.unsplash.com/photo-1620891549027-942fdc95d3f2?w=400&auto=format&fit=crop", desc: "Genuine OEM quality" },
+        { id: 3, name: "Shock Absorber", price: 4200, image: "https://images.unsplash.com/photo-1617531653332-bd46c24f2068?w=400&auto=format&fit=crop", desc: "Heavy duty suspension" },
+        { id: 4, name: "Spark Plugs (4 pcs)", price: 1500, image: "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=400&auto=format&fit=crop", desc: "Iridium performance" },
+        { id: 5, name: "Alternator Belt", price: 1200, image: "https://images.unsplash.com/photo-1625047509248-ec889cbff17f?w=400&auto=format&fit=crop", desc: "Durable rubber" },
+        { id: 6, name: "Headlight Bulb", price: 650, image: "https://images.unsplash.com/photo-1617814076367-b75907d8c53f?w=400&auto=format&fit=crop", desc: "Ultra white LED" }
+      ];
+
+      let cart = [];
+
+      // Render products
+      const productGrid = document.getElementById('productGrid');
+      function renderProducts() {
+        productGrid.innerHTML = products.map(p => `
+          <div class="product-card">
+            <div class="product-img">
+              <img src="${p.image}" alt="${p.name}" loading="lazy">
+            </div>
+            <div class="product-info">
+              <h3>${p.name}</h3>
+              <p style="color:#64748b; font-size:0.9rem;">${p.desc}</p>
+              <div class="price">KSh ${p.price.toLocaleString()}</div>
+              <div class="product-actions">
+                <button class="btn-sm btn-cart" onclick="addToCart(${p.id})"><i class="fas fa-cart-plus"></i> Cart</button>
+                <a href="https://wa.me/254792632272?text=I%20want%20to%20order%20${encodeURIComponent(p.name)}%20(KSh%20${p.price})" target="_blank" class="btn-sm btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+              </div>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      window.addToCart = function(productId) {
+        const product = products.find(p => p.id === productId);
+        if (product) {
+          cart.push(product);
+          updateCartCount();
+          alert(`${product.name} added to cart!`);
+        }
+      };
+
+      function updateCartCount() {
+        document.getElementById('cartCount').textContent = cart.length;
+      }
+
+      // Search functionality
+      document.getElementById('searchBtn').addEventListener('click', function() {
+        const query = document.getElementById('searchInput').value.toLowerCase().trim();
+        if (query) {
+          const filtered = products.filter(p => p.name.toLowerCase().includes(query) || p.desc.toLowerCase().includes(query));
+          if (filtered.length > 0) {
+            productGrid.innerHTML = filtered.map(p => `
+              <div class="product-card">
+                <div class="product-img"><img src="${p.image}" alt="${p.name}"></div>
+                <div class="product-info">
+                  <h3>${p.name}</h3><p>${p.desc}</p>
+                  <div class="price">KSh ${p.price.toLocaleString()}</div>
+                  <div class="product-actions">
+                    <button class="btn-sm btn-cart" onclick="addToCart(${p.id})"><i class="fas fa-cart-plus"></i> Cart</button>
+                    <a href="https://wa.me/254792632272?text=I%20want%20to%20order%20${encodeURIComponent(p.name)}" target="_blank" class="btn-sm btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                  </div>
+                </div>
+              </div>
+            `).join('');
+          } else {
+            productGrid.innerHTML = '<p style="grid-column:1/-1; text-align:center;">No products found. Try another keyword.</p>';
+          }
+        } else {
+          renderProducts();
+        }
+      });
+
+      document.getElementById('searchInput').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+          document.getElementById('searchBtn').click();
+        }
+      });
+
+      // Cart icon click (show cart summary)
+      document.getElementById('cartIcon').addEventListener('click', function(e) {
+        e.preventDefault();
+        if (cart.length === 0) {
+          alert("Your cart is empty. Add some spare parts!");
+        } else {
+          let cartItems = cart.map(item => item.name).join('\n');
+          alert(`Cart items:\n${cartItems}\n\nProceed via WhatsApp to complete order.`);
+        }
+      });
+
+      // Book service buttons
+      function bookServiceAction() {
+        window.open('https://wa.me/254792632272?text=Hello%20Sam%20Auto%20Spares%2C%20I%20would%20like%20to%20book%20a%20service.', '_blank');
+      }
+
+      document.getElementById('bookServiceLink').addEventListener('click', (e) => { e.preventDefault(); bookServiceAction(); });
+      document.getElementById('bookServiceBtn').addEventListener('click', bookServiceAction);
+      document.getElementById('bookNav').addEventListener('click', (e) => { e.preventDefault(); bookServiceAction(); });
+
+      // Login/Register modal
+      const modal = document.getElementById('authModal');
+      const modalTitle = document.getElementById('modalTitle');
+      const switchAuth = document.getElementById('switchAuth');
+      const authSubmit = document.getElementById('authSubmit');
+      let isLogin = true;
+
+      document.querySelectorAll('.top-links a, .nav-links a[href="#"]').forEach(link => {
+        if (link.textContent.includes('Login') || link.textContent.includes('Register')) {
+          link.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (link.textContent.includes('Register')) {
+              isLogin = false;
+              modalTitle.textContent = 'Register';
+              authSubmit.textContent = 'Register';
+              switchAuth.textContent = 'Login instead';
+            } else {
+              isLogin = true;
+              modalTitle.textContent = 'Login';
+              authSubmit.textContent = 'Login';
+              switchAuth.textContent = 'Register';
+            }
+            modal.style.display = 'flex';
+          });
+        }
+      });
+
+      switchAuth.addEventListener('click', () => {
+        isLogin = !isLogin;
+        if (isLogin) {
+          modalTitle.textContent = 'Login';
+          authSubmit.textContent = 'Login';
+          switchAuth.textContent = 'Register';
+        } else {
+          modalTitle.textContent = 'Register';
+          authSubmit.textContent = 'Register';
+          switchAuth.textContent = 'Login instead';
+        }
+      });
+
+      document.getElementById('closeModal').addEventListener('click', () => modal.style.display = 'none');
+      window.addEventListener('click', (e) => { if (e.target === modal) modal.style.display = 'none'; });
+
+      authSubmit.addEventListener('click', () => {
+        const email = document.getElementById('authEmail').value;
+        const password = document.getElementById('authPassword').value;
+        if (email && password) {
+          alert(`${isLogin ? 'Login' : 'Registration'} successful! (demo)`);
+          modal.style.display = 'none';
+        } else {
+          alert('Please fill all fields.');
+        }
+      });
+
+      // Initial render
+      renderProducts();
+      updateCartCount();
+    })();
+  </script>
+</body>
+</html>
